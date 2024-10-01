@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
+  const blogPost = {
+    title: 'A Simple Blog Post',
+    author: 'John Doe',
+    date: 'October 1, 2024',
+    content: `
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. 
+      Integer nec purus sit amet odio ultrices tincidunt. Ut bibendum scelerisque risus, in viverra velit. 
+      Suspendisse potenti.
+    `,
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <header style={{ textAlign: 'center' }}>
+        <h1>{blogPost.title}</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <strong>By {blogPost.author}</strong> | <em>{blogPost.date}</em>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <article style={{ marginTop: '20px', lineHeight: '1.6' }}>
+        <p>{blogPost.content}</p>
+      </article>
     </div>
   );
 }
